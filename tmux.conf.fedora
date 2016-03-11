@@ -1,0 +1,23 @@
+# make tmux display things in 256 colors
+set -g default-terminal "screen-256color"
+
+# status bar rename
+setw -g automatic-rename on
+
+# set current windows turning red in status bar
+set-window-option -g window-status-current-fg white 
+set-window-option -g window-status-current-bg red 
+set-window-option -g window-status-current-attr bright
+
+# same as google chrome
+bind-key -n C-NPage 	next-window
+bind-key -n C-PPage	previous-window
+bind-key -n C-t 	new-window
+bind-key -n C-w		kill-window
+
+# for the fucking pietty, which set Ctrl+PageUp for scrolling and cant modify it. Simply use Alt+PageUp to replace it.
+bind-key -n M-NPage  next-window
+bind-key -n M-PPage    previous-window
+
+# rename status bar window
+bind-key -n C-r         command-prompt 'rename-window %%'
